@@ -36,7 +36,7 @@ curl -X POST "http://localhost:8000/predict" \
 
 ---
 
-## Recent Changes
+## Changes Made
 
 ### 1. Code Refactoring (`src/main.py`)
 - **Model Upgrade**: Replaced `RandomForestClassifier` with `GradientBoostingClassifier`.
