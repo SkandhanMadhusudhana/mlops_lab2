@@ -1,4 +1,4 @@
-# Lab 1: Dockerized Iris Classifier API
+# Lab 2: Dockerized Iris Classifier API
 
 This lab demonstrates how to containerize a Machine Learning model (Gradient Boosting Classifier) and serve it using FastAPI.
 
