@@ -1,3 +1,22 @@
+## Changes Made
+
+### 1. Code Refactoring (`src/main.py`)
+- **Model Upgrade**: Replaced `RandomForestClassifier` with `GradientBoostingClassifier`.
+- **API Implementation**: Added `FastAPI` to serve predictions via a POST endpoint.
+- **Logging**: Replaced `print` statements with standard `logging`.
+- **Startup**: Model training happens on application startup.
+
+### 2. Docker Optimization (`Dockerfile`)
+- **Base Image**: Switched to `python:3.10-slim` for a smaller footprint.
+- **Caching**: Reordered `COPY` steps to install dependencies before copying source code, speeding up builds.
+- **Security**: Added a non-root `appuser`.
+- **Network**: Exposed port 8000 and configured `uvicorn` entrypoint.
+
+### 3. Dependencies (`src/requirements.txt`)
+- Added `fastapi` and `uvicorn`.
+
+---
+
 # Lab 2: Dockerized Iris Classifier API
 
 This lab demonstrates how to containerize a Machine Learning model (Gradient Boosting Classifier) and serve it using FastAPI.
@@ -36,19 +55,4 @@ curl -X POST "http://localhost:8000/predict" \
 
 ---
 
-## Changes Made
 
-### 1. Code Refactoring (`src/main.py`)
-- **Model Upgrade**: Replaced `RandomForestClassifier` with `GradientBoostingClassifier`.
-- **API Implementation**: Added `FastAPI` to serve predictions via a POST endpoint.
-- **Logging**: Replaced `print` statements with standard `logging`.
-- **Startup**: Model training happens on application startup.
-
-### 2. Docker Optimization (`Dockerfile`)
-- **Base Image**: Switched to `python:3.10-slim` for a smaller footprint.
-- **Caching**: Reordered `COPY` steps to install dependencies before copying source code, speeding up builds.
-- **Security**: Added a non-root `appuser`.
-- **Network**: Exposed port 8000 and configured `uvicorn` entrypoint.
-
-### 3. Dependencies (`src/requirements.txt`)
-- Added `fastapi` and `uvicorn`.
